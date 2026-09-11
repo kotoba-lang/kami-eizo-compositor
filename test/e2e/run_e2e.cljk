@@ -52,7 +52,7 @@
    Run from the repo root (needs BOTH classpath roots -- src for
    kami.eizo.compositor.chroma-key/blend, test/e2e/src for the shared e2e
    composite-proof namespace):
-   `nbb -cp \"src:test/e2e/src\" test/e2e/run_e2e.cljk`"
+   `kbb --backend sci -cp \"src:test/e2e/src\" test/e2e/run_e2e.cljk`"
   (:require ["playwright" :refer [chromium]]
             ["http" :as http]
             ["fs" :as fs]
