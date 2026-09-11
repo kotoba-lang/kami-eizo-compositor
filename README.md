@@ -101,16 +101,16 @@ formula produce correct output on **real pixel data that has been through
 a real, lossy video codec** — not just synthetic triples in a unit test.
 
 It builds directly on `kotoba-lang/org-w3-webcodecs`'s own real-browser
-WebCodecs E2E proof (`org-w3-webcodecs` `test/e2e/run_e2e.cljs`, commit
+WebCodecs E2E proof (`org-w3-webcodecs` `test/e2e/run_e2e.cljk`, commit
 `b14dc397e248`) and mirrors the harness `kami-eizo-timeline`
-(`test/e2e/run_e2e.cljs`, commit `c0116940f19e`) and `kami-eizo-grade`
-(`test/e2e/run_e2e.cljs`, commit `a19d4ea81b03`) established on top of it
+(`test/e2e/run_e2e.cljk`, commit `c0116940f19e`) and `kami-eizo-grade`
+(`test/e2e/run_e2e.cljk`, commit `a19d4ea81b03`) established on top of it
 — same nbb+Playwright harness, same local HTTP server (WebCodecs needs a
 secure context; `about:blank`/`file:` don't expose
 `VideoDecoder`/`VideoEncoder`), same real headless Chromium, same
 `avc1.42001f` H.264 baseline codec.
 
-`test/e2e/src/kami/eizo/compositor/e2e/composite_proof.cljc` is a small
+`test/e2e/src/kami/eizo/compositor/e2e/composite_proof.cljk` is a small
 portable namespace wrapping `kami.eizo.compositor.chroma-key/key-alpha`
 and `kami.eizo.compositor.blend/composite` with a concrete key color
 (`[20 220 20]`, a pure saturated green) and the same `:tolerance 0.15
@@ -140,7 +140,7 @@ kami-eizo-grade's own E2E pages) does four things, in order:
    composited pixels themselves survive a real codec round-trip, not just
    that the arithmetic ran.
 
-`test/e2e/run_e2e.cljs` (nbb) then does the cross-verification this proof
+`test/e2e/run_e2e.cljk` (nbb) then does the cross-verification this proof
 is really about: it requires the *same* `composite_proof.cljc` source
 directly (via `nbb -cp "src:test/e2e/src"` — a different runtime/execution
 path than the browser's compiled bundle) and recomputes the expected
@@ -185,7 +185,7 @@ bash scripts/build-e2e-bundle.sh            # compiles kami.eizo.compositor.e2e.
                                              # (JVM/Clojure CLI build step, not an
                                              # app-runtime choice — see
                                              # scripts/build-e2e-bundle.sh)
-nbb -cp "src:test/e2e/src" test/e2e/run_e2e.cljs
+nbb -cp "src:test/e2e/src" test/e2e/run_e2e.cljk
 ```
 
 Exits 0 and prints the JSON result (per-region painted/decoded/alpha/

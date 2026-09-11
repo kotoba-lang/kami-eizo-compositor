@@ -3,10 +3,10 @@
    alpha computation and blend-mode compositing produce correct output on
    REAL pixel data, not just synthetic numbers in a unit test. Builds
    directly on `kotoba-lang/org-w3-webcodecs`'s own real-browser WebCodecs
-   E2E (`org-w3-webcodecs` `test/e2e/run_e2e.cljs`, commit `b14dc397e248`)
+   E2E (`org-w3-webcodecs` `test/e2e/run_e2e.cljk`, commit `b14dc397e248`)
    and mirrors the harness `kami-eizo-timeline`
-   (`test/e2e/run_e2e.cljs`, commit `c0116940f19e`) and `kami-eizo-grade`
-   (`test/e2e/run_e2e.cljs`, commit `a19d4ea81b03`) established on top of
+   (`test/e2e/run_e2e.cljk`, commit `c0116940f19e`) and `kami-eizo-grade`
+   (`test/e2e/run_e2e.cljk`, commit `a19d4ea81b03`) established on top of
    it: nbb + Playwright, local HTTP server for the secure-context
    requirement, real headless Chromium, same `avc1.42001f` H.264 baseline
    codec.
@@ -52,7 +52,7 @@
    Run from the repo root (needs BOTH classpath roots -- src for
    kami.eizo.compositor.chroma-key/blend, test/e2e/src for the shared e2e
    composite-proof namespace):
-   `nbb -cp \"src:test/e2e/src\" test/e2e/run_e2e.cljs`"
+   `nbb -cp \"src:test/e2e/src\" test/e2e/run_e2e.cljk`"
   (:require ["playwright" :refer [chromium]]
             ["http" :as http]
             ["fs" :as fs]

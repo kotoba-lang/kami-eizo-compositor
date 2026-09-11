@@ -5,11 +5,11 @@
    test/e2e/src/kami/eizo/grade/e2e/grade_proof.cljc, commit `a19d4ea81b03`):
 
    1. Compiled into the browser bundle
-      (test/e2e/src/kami/eizo/compositor/e2e/entry.cljs ->
+      (test/e2e/src/kami/eizo/compositor/e2e/entry.cljk ->
       scripts/build-e2e-bundle.sh -> composite-proof-bundle.js) and run
       in-page (test/e2e/page/index.html) against REAL decoded H.264 pixel
       values coming back out of org-w3-webcodecs's VideoDecoder.
-   2. Required directly by test/e2e/run_e2e.cljs (nbb, interpreting this
+   2. Required directly by test/e2e/run_e2e.cljk (nbb, interpreting this
       same .cljc source rather than the compiled bundle) to compute the
       *expected* key-alpha and composite values offline, fed the exact
       same real decoded pixel triples the browser captured -- i.e. real
@@ -18,8 +18,8 @@
 
    `kami.eizo.compositor.chroma-key/key-alpha` and
    `kami.eizo.compositor.blend/composite` are already unit-tested against
-   hand-computed values (test/kami/eizo/compositor/chroma_key_test.cljc,
-   test/kami/eizo/compositor/blend_test.cljc); this proof is not
+   hand-computed values (test/kami/eizo/compositor/chroma_key_test.cljk,
+   test/kami/eizo/compositor/blend_test.cljk); this proof is not
    re-verifying that arithmetic (already covered offline). It verifies two
    things the unit tests cannot: that this repo's chroma-key + composite
    math runs correctly *in a real browser* on *real, slightly-lossy decoded
