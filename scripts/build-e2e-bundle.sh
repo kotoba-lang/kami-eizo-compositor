@@ -11,7 +11,7 @@
 # choice.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-clojure -M:e2e -m cljs.main --optimizations simple \
+kbb -M:e2e -m cljs.main --optimizations simple \
   --output-to test/e2e/page/composite-proof-bundle.js \
   -c kami.eizo.compositor.e2e.entry
 echo "wrote test/e2e/page/composite-proof-bundle.js"

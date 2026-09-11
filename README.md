@@ -142,7 +142,7 @@ kami-eizo-grade's own E2E pages) does four things, in order:
 
 `test/e2e/run_e2e.cljk` (nbb) then does the cross-verification this proof
 is really about: it requires the *same* `composite_proof.cljc` source
-directly (via `nbb -cp "src:test/e2e/src"` — a different runtime/execution
+directly (via `kbb --backend sci -cp "src:test/e2e/src"` — a different runtime/execution
 path than the browser's compiled bundle) and recomputes the expected
 chroma-key alpha and composite result for each foreground region from the
 exact `decodedFg`/`decodedBg` values the browser captured, then diffs
@@ -185,7 +185,7 @@ bash scripts/build-e2e-bundle.sh            # compiles kami.eizo.compositor.e2e.
                                              # (JVM/Clojure CLI build step, not an
                                              # app-runtime choice — see
                                              # scripts/build-e2e-bundle.sh)
-nbb -cp "src:test/e2e/src" test/e2e/run_e2e.cljk
+kbb --backend sci -cp "src:test/e2e/src" test/e2e/run_e2e.cljk
 ```
 
 Exits 0 and prints the JSON result (per-region painted/decoded/alpha/
