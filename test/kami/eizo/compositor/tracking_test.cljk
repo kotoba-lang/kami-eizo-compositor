@@ -1,6 +1,6 @@
 (ns kami.eizo.compositor.tracking-test
   (:require [kami.eizo.compositor.tracking :as tracking]
-            #?(:clj [clojure.test :refer [deftest is testing]]
+            #?(:clj [kotoba.test :refer [deftest is testing]]
                :cljs [cljs.test :refer [deftest is testing]])))
 
 (def samples [{:frame 0 :x 0.0 :y 0.0 :confidence 0.9}

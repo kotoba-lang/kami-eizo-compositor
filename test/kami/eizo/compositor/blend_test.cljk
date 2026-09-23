@@ -1,6 +1,6 @@
 (ns kami.eizo.compositor.blend-test
   (:require [kami.eizo.compositor.blend :as blend]
-            #?(:clj [clojure.test :refer [deftest is testing]]
+            #?(:clj [kotoba.test :refer [deftest is testing]]
                :cljs [cljs.test :refer [deftest is testing]])))
 
 (defn- close? [a b] (every? true? (map (fn [x y] (< (Math/abs (- x y)) 1e-9)) a b)))
