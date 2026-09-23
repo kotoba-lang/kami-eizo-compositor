@@ -1,6 +1,6 @@
 (ns kami.eizo.compositor.chroma-key-test
   (:require [kami.eizo.compositor.chroma-key :as ck]
-            #?(:clj [clojure.test :refer [deftest is testing]]
+            #?(:clj [kotoba.test :refer [deftest is testing]]
                :cljs [cljs.test :refer [deftest is testing]])))
 
 (deftest rgb-distance-test

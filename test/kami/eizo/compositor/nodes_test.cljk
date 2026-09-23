@@ -1,6 +1,6 @@
 (ns kami.eizo.compositor.nodes-test
   (:require [kami.eizo.compositor.nodes :as nodes]
-            #?(:clj [clojure.test :refer [deftest is testing]]
+            #?(:clj [kotoba.test :refer [deftest is testing]]
                :cljs [cljs.test :refer [deftest is testing]])))
 
 (deftest node-pack-satisfies-comfyui-contract-test

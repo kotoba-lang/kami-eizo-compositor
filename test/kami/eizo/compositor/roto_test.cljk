@@ -1,6 +1,6 @@
 (ns kami.eizo.compositor.roto-test
   (:require [kami.eizo.compositor.roto :as roto]
-            #?(:clj [clojure.test :refer [deftest is testing]]
+            #?(:clj [kotoba.test :refer [deftest is testing]]
                :cljs [cljs.test :refer [deftest is testing]])))
 
 (def square [[0 0] [10 0] [10 10] [0 10]])
